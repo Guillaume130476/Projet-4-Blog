@@ -1,13 +1,23 @@
-
-
 <?php
 session_start(); // On démarre la session AVANT toute chose
 ?>
 <?php ob_start(); ?>
 
+<?php 
 
-<div id="bloc_page">
-    <!-- HEADER -->
+  if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
+
+}
+else {
+  
+    ?><script language="javascript">document.location="http://localhost/blogfr/view/frontEnd/login.php"</script>;<?php
+}
+
+ ?>
+
+
+ <div id="bloc_page">
+  <!-- HEADER -->
   <?php require("header.php"); ?>
   <div id="titresession">
     <h2>
@@ -17,39 +27,39 @@ session_start(); // On démarre la session AVANT toute chose
       <a href="indexBackEnd.php">Retour</a>
     </p>
   </div>
-       
-  <section class="col-xl-offset-1 col-xl-5" id="listeArticle">
-      <?php
+  <div class="container-fluid"> 
+    <div class="row"> 
+      <section class="col-sm-offset-2 col-sm-8" id="listeArticle">
+        <?php
 
         while ($donnees = $req->fetch())
         {
-        ?>
-        <div id="onearticle">
+          ?>
+          <div class="onearticle">
             <p >
 
 
-            <?php
-            echo htmlspecialchars($donnees['author']);?> le 
+              <?php
+              echo htmlspecialchars($donnees['author']);?> le 
 
-            <?php
-            echo htmlspecialchars($donnees['date_comment']);?></br>
-             <?php
+              <?php
+              echo htmlspecialchars($donnees['date_comment']);?></p><br>
+              <p>
+              <?php
 
-            echo htmlspecialchars($donnees['comment']);?></p>
-          <a href="indexBackEnd.php?action=vBufferComment&amp;id=<?php echo $donnees['id']; ?>">Valider </a>
-          <a href="indexBackEnd.php?action=dBufferComment&amp;id=<?php echo $donnees['id']; ?>">Supprimer </a>
-  
+              echo htmlspecialchars($donnees['comment']);?><br>
+              <a href="indexBackEnd.php?action=vBufferComment&amp;id=<?php echo $donnees['id']; ?>">Valider </a>
+              <a href="indexBackEnd.php?action=dBufferComment&amp;id=<?php echo $donnees['id']; ?>">Supprimer </a>
+
             </p>
-        </div>
-        <?php
+          </div>
+          <?php
         }
         $req->closeCursor();
         ?>
-  </section>
-        
-    
-  <?php include("footer.php"); ?>
+      </section>
+    </div> 
+  </div>    
 </div>
-  <?php $content = ob_get_clean(); ?>
-
+<?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

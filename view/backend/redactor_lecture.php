@@ -6,8 +6,6 @@ session_start(); // On démarre la session AVANT toute chose
 
 <?php ob_start(); ?>
 
-<body>
-
   <div id="bloc_page">
     <!-- HEADER -->
     <?php include("header.php"); ?>
@@ -22,9 +20,8 @@ session_start(); // On démarre la session AVANT toute chose
           </h2> 
           <p><a href="indexBackEnd.php">Retour</a></p>
         </div>
-        <section class="col-lg-offset-2 col-lg-6" id="listeArticle"> 
-             
-        <div class="news">
+        <section class="col-lg-offset-2 col-lg-6" id="listeArticle">    
+          <div class="news">
           <p><?= nl2br(htmlspecialchars($post['Content']))?></p> 
         </div>
         </section>
@@ -33,7 +30,6 @@ session_start(); // On démarre la session AVANT toute chose
           <div id="titreComments">
             <h3>Commentaires</h3>
           </div>
-           
              <?php
             while ($comment = $comments->fetch())
             {
@@ -58,10 +54,6 @@ session_start(); // On démarre la session AVANT toute chose
       </div>
     </div>
   </div> 
-      
-     
-  <?php include("footer.php"); ?> 
   <?php $content = ob_get_clean(); ?>
   <?php require('template.php'); ?>
 
-</body>
