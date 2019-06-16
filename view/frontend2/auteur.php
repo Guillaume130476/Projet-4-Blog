@@ -1,48 +1,21 @@
-
-
 <?php ob_start(); ?>
 
 <div id="bloc_page">
 
 	<!-- HEADER -->
 
-	<?php include("../header.php"); ?>
+	
 	<!-- DIAPORAMA -->      
-	<section id="contenantdiapo">
-		<!--contenant diaporama --> 
-		<div id="titrelivre">
-			<div id="boutons">
-				<div class="prev">
-					<i class="fas fa-angle-left fa-2x"></i>
-				</div>
-				<div class="next">
-					<i class="fas fa-angle-right fa-2x"></i>
-				</div>
-			</div>
-			<div id="billet">
-				<img class="images" src="../../images/titrelivre.png" alt="paysage Alaska">
-			</div>
-		</div>
-		<div id="diaporama">
-			<img class="images" src="../../images/canada1.jpg" alt="paysage Alaska">
-			<img class="images" src="../../images/canada2.jpg" alt="paysage Alaska" >
-			<img class="images" src="../../images/canada3.jpg" alt="paysage Alaska" >
-			<img class="images" src="../../images/canada4.jpg" alt="paysage Alaska" >
-		</div>
-	</section>
+	<?php include("../diaporama.php"); ?>
 
 	<div class="container-fluid">  
 		<div class="row">
-			<div class="col-lg-12" id="titreArticle">
-				<h2>L'Auteur
-				</h2>
+			<div  id="titreArticle">
+				<h2>L'Auteur</h2>	
 			</div>
-
-
-			<section id="Auteur" class="col-lg-12">
-				<div id="texteAuteur"class="col-lg-8 col-sm-12">
+			<section id="Auteur" class="col-lg-offset-1 col-lg-10">
+				<div id="texteAuteur" class="col-lg-8 col-sm-12">
 					<p>
-
 					Jean Forteroche est un écrivain français. 
 
 
@@ -57,7 +30,6 @@
 					Outre la série "Bolitho", de loin celle qui a le plus connu le succès, Jean Forteroche a signé les livres de la série "Blackwood" (1982-2004) ainsi que "L'attaque vient de la mer" (Against the Sea, 1971), un recueil de ses premiers romans autobiographiques.
 
 					En 2005, en plus de 36 romans racontant les exploits de Richard et Adam Bolitho, Forteroche a écrit 35 autres romans, traduits dans 14 langues différentes. 34 millions d'exemplaires auraient été vendus, dans une vingtaine de langues. 
-
 					</p>
 				</div>
 
@@ -68,10 +40,6 @@
 			</section>
 		</div>
 	</div>
-
-
-	<?php include("../footer.php"); ?>
-
 </div>
 
 <?php $content = ob_get_clean(); ?>
