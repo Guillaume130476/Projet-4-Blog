@@ -64,8 +64,8 @@ p{
 #bloc_page {
 	
 	
-	box-shadow: 0px 30px 35px 2px #656565;
-
+	
+	height: auto;
 
 }
 
@@ -127,7 +127,8 @@ color: #000000 ! important;
 }
 
 #menu a:hover {
-    border-top: : 3px #5cadd3 solid;
+
+    border-top:  3px #5cadd3 solid;
 }
 
 .navbar-nav {
@@ -292,11 +293,21 @@ footer {
 	margin-top: 150px;
 }
 
-#photo {
+#photo, #photo2, #photo3,#photo4 {
 	margin-bottom: 50px;
 }
 
-#photo img{
+#photo img, #photo2 img , #photo3 img,#photo4 img{
+	width: 100%;
+}
+
+
+
+.photo {
+	margin-bottom: 50px;
+}
+
+.photo img{
 	width: 100%;
 }
 
@@ -305,6 +316,14 @@ footer {
 }
 
 #onearticle p{
+	text-indent: 0px;
+}
+
+.onearticle{
+	border-bottom: 1px solid #278cc6;
+}
+
+.onearticle p{
 	text-indent: 0px;
 }
 
@@ -377,6 +396,12 @@ color: #ffffff;
 }
 
 #comment{
+	border-bottom: solid 1px #ffffff ! important;
+	margin-top :15px;
+	margin-bottom: 15px;
+}
+
+.comment{
 	border-bottom: solid 1px #ffffff ! important;
 	margin-top :15px;
 	margin-bottom: 15px;
@@ -486,13 +511,13 @@ input{
 	margin : 20px;
 }
 
-}
+
 
 /******************************************/
 
 #formulaire{
 
-	margin-top: 50px;
+	margin-top: 250px;
   	background-color: #fafafa;	
 }
 
@@ -517,6 +542,7 @@ input{
 
 #photocontact img {
 	width: 100%;
+	margin-top: 75px;
 }
 
 
@@ -538,10 +564,8 @@ input{
 
 #listebilletsenligne {
 	background-color: #fafafa;
-	height: 900px;
 	margin-top: 100px;
 	overflow: auto  ! important;
-
 }
 
  #listeCommentairesAV{
@@ -619,8 +643,33 @@ input{
 #auteur, #titre, #date {
 
 	
-	width: 100% ! important;
+	width: 90% ! important;
 }
+
+ #listeCommentairesAV{
+	
+	margin-top: 50px;
+	margin-bottom: 50px;
+	overflow: auto  ! important;
+	color: #343434;
+    box-shadow: 0px 0px 10px #343434;
+    border-radius: 10px;
+    border: 1px solid #656565;
+    background: #cfcfcf;
+    background: linear-gradient(#cfcfcf, #656565);
+    height: 50px;
+    width: 200px;
+    text-align: center ! important;
+
+}
+
+#texteAuteur{
+text-align: justify;
+line-height: 30px;
+column-count: 1;
+column-gap : 3rem;
+}
+
 }
 
 
